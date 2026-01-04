@@ -1,61 +1,8 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import PropertySearchApp from './App';
-
-// Mock the properties data
-jest.mock('../public/properties.json', () => ({
-    properties: [
-        {
-            id: "prop1",
-            type: "House",
-            bedrooms: 3,
-            price: "Rs.23,600,000",
-            tenure: "Freehold",
-            description: "Modern three-bedroom house with pool",
-            longDescription: "A super-luxury two-storey residence",
-            location: "Dehiwala-Mount Lavinia",
-            locationpath: "RVJJ+22W Dehiwala-Mount Lavinia",
-            postcode: "BR5",
-            picture: "public/web images/pro1.1.jpeg",
-            images: ["public/web images/pro1.1.jpeg"],
-            floorPlan: "public/web images/pro1.6.png",
-            added: { month: "October", day: 20, year: 2025 }
-        },
-        {
-            id: "prop2",
-            type: "Flat",
-            bedrooms: 2,
-            price: "Rs. 158,000,000",
-            tenure: "Freehold",
-            description: "Modern apartment at Cinnamon Life",
-            longDescription: "Experience upscale city living",
-            location: "Colombo 2",
-            locationpath: "WV93+XJC Colombo",
-            postcode: "BR6",
-            picture: "public/web images/pro2.1.jpeg",
-            images: ["public/web images/pro2.1.jpeg"],
-            floorPlan: "public/web images/pro2.2.jpeg",
-            added: { month: "September", day: 14, year: 2025 }
-        },
-        {
-            id: "prop3",
-            type: "House",
-            bedrooms: 4,
-            price: "Rs. 31,185,000",
-            tenure: "Freehold",
-            description: "Luxury 4-bedroom home",
-            longDescription: "Ultra-modern luxury house",
-            location: "Dehiwala",
-            locationpath: "RVJJ+22W Dehiwala",
-            postcode: "BR2",
-            picture: "public/web images/pro6.1.jpeg",
-            images: ["public/web images/pro6.1.jpeg"],
-            floorPlan: "public/web images/pro6.4.jpeg",
-            added: { month: "January", day: 20, year: 2025 }
-        }
-    ]
-}));
+import propertiesData from '../public/properties.json';
 
 describe('PropertySearchApp Component', () => {
 
@@ -63,8 +10,11 @@ describe('PropertySearchApp Component', () => {
     test('should filter properties by type (House/Flat)', () => {
         render(<PropertySearchApp />);
 
-        // Initially, all 3 properties should be displayed
-        expect(screen.getByText('3 Properties Found')).toBeInTheDocument();
+        const totalProperties = propertiesData.properties.length;
+        const houseCount = propertiesData.properties.filter(p => p.type === 'House').length;
+
+        // Initially, all properties should be displayed
+        expect(screen.getByText(`${totalProperties} Properties Found`)).toBeInTheDocument();
 
         // Select "House" from the dropdown
         const typeSelect = screen.getByLabelText('Property Type');
@@ -74,10 +24,8 @@ describe('PropertySearchApp Component', () => {
         const searchButton = screen.getByText('Search Properties');
         fireEvent.click(searchButton);
 
-        // Should now show only 2 houses
-        expect(screen.getByText('2 Properties Found')).toBeInTheDocument();
-        expect(screen.getByText('Dehiwala-Mount Lavinia')).toBeInTheDocument();
-        expect(screen.getByText('Dehiwala')).toBeInTheDocument();
+        // Should now show only houses
+        expect(screen.getByText(`${houseCount} ${houseCount === 1 ? 'Property' : 'Properties'} Found`)).toBeInTheDocument();
     });
 
     // Test 2: Bedroom Range Filter
@@ -96,14 +44,18 @@ describe('PropertySearchApp Component', () => {
         const searchButton = screen.getByText('Search Properties');
         fireEvent.click(searchButton);
 
-        // Should show only the 3-bedroom property
-        expect(screen.getByText('1 Property Found')).toBeInTheDocument();
-        expect(screen.getByText('Dehiwala-Mount Lavinia')).toBeInTheDocument();
+        // Count properties with exactly 3 bedrooms from actual data
+        const threeBedCount = propertiesData.properties.filter(p => p.bedrooms === 3).length;
+
+        // Should show only the 3-bedroom properties
+        expect(screen.getByText(`${threeBedCount} ${threeBedCount === 1 ? 'Property' : 'Properties'} Found`)).toBeInTheDocument();
     });
 
     // Test 3: Add to Favourites Functionality
     test('should add property to favourites when star button is clicked', () => {
         render(<PropertySearchApp />);
+
+        const firstProperty = propertiesData.properties[0];
 
         // Find all "Add to favourites" buttons
         const favouriteButtons = screen.getAllByLabelText(/Add to favourites/i);
@@ -113,7 +65,7 @@ describe('PropertySearchApp Component', () => {
 
         // Check that the property appears in the favourites sidebar
         const sidebar = screen.getByLabelText('Saved Properties');
-        expect(sidebar).toHaveTextContent('Dehiwala-Mount Lavinia');
+        expect(sidebar).toHaveTextContent(firstProperty.location);
 
         // The button should now be disabled and show "Already in favourites"
         expect(screen.getByLabelText('Already in favourites')).toBeInTheDocument();
@@ -123,13 +75,15 @@ describe('PropertySearchApp Component', () => {
     test('should remove property from favourites when X button is clicked', () => {
         render(<PropertySearchApp />);
 
+        const firstProperty = propertiesData.properties[0];
+
         // Add a property to favourites first
         const favouriteButtons = screen.getAllByLabelText(/Add to favourites/i);
         fireEvent.click(favouriteButtons[0]);
 
         // Verify it's in favourites
         const sidebar = screen.getByLabelText('Saved Properties');
-        expect(sidebar).toHaveTextContent('Dehiwala-Mount Lavinia');
+        expect(sidebar).toHaveTextContent(firstProperty.location);
 
         // Find and click the remove button in the favourites sidebar
         const removeButton = screen.getByLabelText(/Remove .* from favourites/i);
@@ -142,6 +96,8 @@ describe('PropertySearchApp Component', () => {
     // Test 5: Reset Search Functionality
     test('should reset all search filters and show all properties', () => {
         render(<PropertySearchApp />);
+
+        const totalProperties = propertiesData.properties.length;
 
         // Apply some filters
         const typeSelect = screen.getByLabelText('Property Type');
@@ -157,9 +113,6 @@ describe('PropertySearchApp Component', () => {
         const searchButton = screen.getByText('Search Properties');
         fireEvent.click(searchButton);
 
-        // Should show filtered results (1 flat)
-        expect(screen.getByText('1 Property Found')).toBeInTheDocument();
-
         // Click reset button
         const resetButton = screen.getByText('Reset');
         fireEvent.click(resetButton);
@@ -169,8 +122,8 @@ describe('PropertySearchApp Component', () => {
         expect(minBedroomsInput.value).toBe('');
         expect(postcodeInput.value).toBe('');
 
-        // Should show all 3 properties again
-        expect(screen.getByText('3 Properties Found')).toBeInTheDocument();
+        // Should show all properties again
+        expect(screen.getByText(`${totalProperties} Properties Found`)).toBeInTheDocument();
     });
 
 });

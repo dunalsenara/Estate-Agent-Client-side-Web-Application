@@ -623,7 +623,7 @@ const PropertySearchApp = () => {
                     />
                     <div className="favourite-content">
                       <h4 className="favourite-location">{property.location}</h4>
-                      <p className="favourite-price">{formatPrice(property.price)}</p>
+                      <p className="favourite-price">{(property.price)}</p>
 
                     </div>
                     <button

@@ -3,11 +3,14 @@ module.exports = {
     setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
     moduleNameMapper: {
         '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-        '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/__mocks__/fileMock.js',
-        '^(\\.{1,2}/.*)\\.js$': '$1'
+        '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/__mocks__/fileMock.js'
     },
     transform: {
         '^.+\\.(js|jsx)$': 'babel-jest',
     },
+    transformIgnorePatterns: [
+        'node_modules/(?!(your-esm-package)/)'
+    ],
+    extensionsToTreatAsEsm: ['.jsx'],
     testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)']
 };

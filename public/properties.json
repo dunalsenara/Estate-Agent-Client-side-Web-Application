@@ -56,18 +56,23 @@
         {
             "id": "prop3",
             "type": "House",
-            "bedrooms": 4,
-            "price": ,
+            "bedrooms": 3,
+            "price": "Rs. 23,632,000",
             "tenure": "Freehold",
-            "description": "",
-            "longDescription": "",
-            "location": "",
+            "description": "Modern 3-bedroom house featuring a private pool, spacious living areas, and contemporary design for comfortable family living.",
+            "longDescription": "Elegant 3-bedroom, 2-bathroom luxury home featuring a private pool and outdoor entertainment area. Built with a reinforced concrete structure (25-year warranty) and premium bathroom fittings (5-year warranty). Construction completed in just 6 months + rain delays.",
+            "location": "Battaramulla",
+            "locationpath": "VWXC+9W2 Battaramulla",
             "postcode": "BR3",
-            "picture": "",
+            "picture": "public\\web images\\pro5.1.jpeg",
             "images": [
-                ""
+                "public\\web images\\pro5.1.jpeg",
+                "public\\web images\\pro5.2.jpeg",
+                "public\\web images\\pro5.3.jpeg",
+                "public\\web images\\pro5.4.jpeg",
+                "public\\web images\\pro5.5.png"
             ],
-            "floorPlan": "",
+            "floorPlan": "public\\web images\\pro5.4.jpeg",
             "added": {
                 "month": "November",
                 "day": 5,

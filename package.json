@@ -1,6 +1,5 @@
 {
   "name": "estate-agent-client-side-web-application",
-  "homepage": "https://dunalsenara.github.io/CEYLON-NEST",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -10,9 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",

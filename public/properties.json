@@ -11,16 +11,16 @@
             "locationpath": "RVJJ+22W Dehiwala-Mount Lavinia",
             "location": "Dehiwala-Mount Lavinia",
             "postcode": "BR5",
-            "picture": "public\\web images\\pro1.1.jpeg",
+            "picture": "/web images/pro1.1.jpeg",
             "images": [
-                "public\\web images\\pro1.1.jpeg",
-                "public\\web images\\pro1.2.png",
-                "public\\web images\\pro1.3.jpeg",
-                "public\\web images\\pro1.4.png",
-                "public\\web images\\pro1.5.png",
-                "public\\web images\\pro1.7.png"
+                "/web images/pro1.1.jpeg",
+                "/web images/pro1.2.png",
+                "/web images/pro1.3.jpeg",
+                "/web images/pro1.4.png",
+                "/web images/pro1.5.png",
+                "/web images/pro1.7.png"
             ],
-            "floorPlan": "public\\web images\\pro1.6.png",
+            "floorPlan": "/web images/pro1.6.png",
             "added": {
                 "month": "October",
                 "day": 20,
@@ -38,15 +38,15 @@
             "location": "Colombo 2",
             "locationpath": "WV93+XJC Colombo",
             "postcode": "BR6",
-            "picture": "public\\web images\\pro2.1.jpeg",
+            "picture": "/web images/pro2.1.jpeg",
             "images": [
-                "public\\web images\\pro2.1.jpeg",
-                "public\\web images\\pro2.2.jpeg",
-                "public\\web images\\pro2.3.jpeg",
-                "public\\web images\\pro2.4.jpeg",
-                "public\\web images\\pro2.5.jpeg"
+                "/web images/pro2.1.jpeg",
+                "/web images/pro2.2.jpeg",
+                "/web images/pro2.3.jpeg",
+                "/web images/pro2.4.jpeg",
+                "/web images/pro2.5.jpeg"
             ],
-            "floorPlan": "public\\web images\\pro2.2.jpeg",
+            "floorPlan": "/web images/pro2.2.jpeg",
             "added": {
                 "month": "September",
                 "day": 14,
@@ -64,15 +64,15 @@
             "location": "Battaramulla",
             "locationpath": "VWXC+9W2 Battaramulla",
             "postcode": "BR3",
-            "picture": "public\\web images\\pro5.1.jpeg",
+            "picture": "/web images/pro5.1.jpeg",
             "images": [
-                "public\\web images\\pro5.1.jpeg",
-                "public\\web images\\pro5.2.jpeg",
-                "public\\web images\\pro5.3.jpeg",
-                "public\\web images\\pro5.4.jpeg",
-                "public\\web images\\pro5.5.png"
+                "/web images/pro5.1.jpeg",
+                "/web images/pro5.2.jpeg",
+                "/web images/pro5.3.jpeg",
+                "/web images/pro5.4.jpeg",
+                "/web images/pro5.5.png"
             ],
-            "floorPlan": "public\\web images\\pro5.4.jpeg",
+            "floorPlan": "/web images/pro5.4.jpeg",
             "added": {
                 "month": "November",
                 "day": 5,
@@ -90,14 +90,14 @@
             "location": "Colombo 2",
             "locationpath": "WVF2+5WQ Colombo",
             "postcode": "BR6",
-            "picture": "public\\web images\\pro3.1.jpeg",
+            "picture": "/web images/pro3.1.jpeg",
             "images": [
-                "public\\web images\\pro3.1.jpeg",
-                "public\\web images\\pro3.2.jpeg",
-                "public\\web images\\pro3.3.jpeg",
-                "public\\web images\\pro3.4.jpeg"
+                "/web images/pro3.1.jpeg",
+                "/web images/pro3.2.jpeg",
+                "/web images/pro3.3.jpeg",
+                "/web images/pro3.4.jpeg"
             ],
-            "floorPlan": "public\\web images\\pro3.1.jpeg",
+            "floorPlan": "/web images/pro3.1.jpeg",
             "added": {
                 "month": "December",
                 "day": 1,
@@ -115,15 +115,15 @@
             "location": "Dehiwala",
             "locationpath": "RVJJ+22W Dehiwala-Mount Lavinia",
             "postcode": "BR2",
-            "picture": "public\\web images\\pro6.1.jpeg",
+            "picture": "/web images/pro6.1.jpeg",
             "images": [
-                "public\\web images\\pro6.1.jpeg",
-                "public\\web images\\pro6.2.jpeg",
-                "public\\web images\\pro6.3.jpeg",
-                "public\\web images\\pro6.4.jpeg",
-                "public\\web images\\pro6.5.jpeg"
+                "/web images/pro6.1.jpeg",
+                "/web images/pro6.2.jpeg",
+                "/web images/pro6.3.jpeg",
+                "/web images/pro6.4.jpeg",
+                "/web images/pro6.5.jpeg"
             ],
-            "floorPlan": "public\\web images\\pro6.4.jpeg",
+            "floorPlan": "/web images/pro6.4.jpeg",
             "added": {
                 "month": "January",
                 "day": 20,
@@ -141,14 +141,14 @@
             "location": "Nugegoda",
             "locationpath": "VVFV+6G7 Nugegoda",
             "postcode": "BR1",
-            "picture": "public\\web images\\pro4.1.jpeg",
+            "picture": "/web images/pro4.1.jpeg",
             "images": [
-                "public\\web images\\pro4.1.jpeg",
-                "public\\web images\\pro4.3.jpeg",
-                "public\\web images\\pro4.4.jpeg",
-                "public\\web images\\pro4.5.jpeg"
+                "/web images/pro4.1.jpeg",
+                "/web images/pro4.3.jpeg",
+                "/web images/pro4.4.jpeg",
+                "/web images/pro4.5.jpeg"
             ],
-            "floorPlan": "public\\web images\\pro4.1.jpeg",
+            "floorPlan": "/web images/pro4.1.jpeg",
             "added": {
                 "month": "February",
                 "day": 10,
@@ -166,15 +166,15 @@
             "location": "Weligama",
             "locationpath": "XCGH+XG5 Weligama",
             "postcode": "BR5",
-            "picture": "public\\web images\\pro7.1.png",
+            "picture": "/web images/pro7.1.png",
             "images": [
-                "public\\web images\\pro7.1.png",
-                "public\\web images\\pro7.2.png",
-                "public\\web images\\pro7.3.png",
-                "public\\web images\\pro7.4.png",
-                "public\\web images\\pro7.5.png"
+                "/web images/pro7.1.png",
+                "/web images/pro7.2.png",
+                "/web images/pro7.3.png",
+                "/web images/pro7.4.png",
+                "/web images/pro7.5.png"
             ],
-            "floorPlan": "public\\web images\\pro7.4.png",
+            "floorPlan": "/web images/pro7.4.png",
             "added": {
                 "month": "March",
                 "day": 15,

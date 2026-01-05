@@ -647,6 +647,10 @@ const PropertySearchApp = () => {
           </aside>
         </div>
       </div>
+
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} CEYLON NEST. All rights reserved.</p>
+      </footer>
     </div>
   );
 };

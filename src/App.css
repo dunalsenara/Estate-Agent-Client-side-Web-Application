@@ -520,6 +520,19 @@ body {
   color: #666;
 }
 
+/* footer */
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  background: rgb(90, 233, 90);
+  color: black;
+  font-size: 0.9rem;
+
+
+}
+
+
 /* Responsive */
 @media (max-height:700px) {
   .results-layout {
